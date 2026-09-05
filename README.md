@@ -15,49 +15,59 @@ script.js         UTM capture, sticky CTA, FAQ accordion, redirect helper
 images/           Photography (see manifest below)
 ```
 
-## Image manifest
+## Images
 
-Every image below is referenced by the pages. Until a file exists at the exact path,
-the page shows a labelled placeholder block naming the file it wants. Drop the real
-file in at that path and it appears automatically — no code change needed.
+Six photographs are in the repo, all from the same project, supplied via Drive.
+They are reused across fourteen slots with different crops.
 
-| Path | Used on | Shape | Notes |
-| --- | --- | --- | --- |
-| `images/hero/hero-main.jpg` | index hero | landscape, 2400×1600 | The single most important image. A finished, styled interior or a striking exterior. Text sits over it, so avoid a busy centre. |
-| `images/hero/cta-band.jpg` | index final CTA | wide landscape | Can be a second angle of the hero property. |
-| `images/projects/mechanism-01.jpg` | index, approach | portrait | Team or craft detail — someone actually working. |
-| `images/projects/mechanism-02.jpg` | index, approach | portrait | Plans, schedule, or site setup. |
-| `images/projects/mechanism-03.jpg` | index, approach | portrait | A finished room. |
-| `images/projects/consultation.jpg` | index, "the call" | portrait or square | Homeowner and site manager over drawings. |
-| `images/projects/project-01.jpg` | index + thank-you gallery | landscape | Full refurbishment |
-| `images/projects/project-02.jpg` | index + thank-you gallery | landscape | Extension |
-| `images/projects/project-03.jpg` | index + thank-you gallery | landscape | Loft conversion |
-| `images/projects/project-04.jpg` | index + thank-you gallery | landscape | Kitchen |
-| `images/projects/service-refurbishment.jpg` | index services | portrait | |
-| `images/projects/service-extension.jpg` | index services | portrait | |
-| `images/projects/service-loft.jpg` | index services | portrait | |
-| `images/projects/service-kitchen.jpg` | index services | portrait | |
+| File | Room | Used for |
+| --- | --- | --- |
+| `images/hero/hero-main.jpg` | Kitchen | Hero background |
+| `images/hero/cta-band.jpg` | Living room | Final CTA background |
+| `images/projects/kitchen-crittall.jpg` | Kitchen | Gallery, Kitchen service tile |
+| `images/projects/dining-crittall.jpg` | Dining room | Approach, gallery, Extensions tile |
+| `images/projects/living-red-sofa.jpg` | Living room | Gallery |
+| `images/projects/living-media-wall.jpg` | Living room | Approach, House Renovations tile |
+| `images/projects/bedroom-wardrobes.jpg` | Bedroom | Approach, Loft Conversions tile |
+| `images/projects/bedroom-panelled.jpg` | Bedroom | The-call section, gallery |
 
-**Formats.** JPG for photos, PNG for anything needing transparency. iPhone `.HEIC`
-files will not display in a browser — convert to JPG first (iPhone: Settings →
-Camera → Formats → "Most Compatible").
+All resized to 1600px (hero 2000px) and compressed to ~250 KB each.
 
-**Size.** Aim for under 400 KB each, 2400px on the long edge. Straight-off-the-camera
-files are often 8–12 MB and will make the page slow on mobile, which costs conversions.
+### Two problems with the current photography
 
-**Uploading.** On GitHub: open the folder → Add file → Upload files → drag them in →
-Commit changes. Filenames must match the table exactly, including the extension.
+**1. Every file carries a `© Amica Studio Ltd` watermark.** These are photographer
+proofs, not licensed final files. The watermark is visible bottom-right on all six
+and appears on the live page. Get clean licensed copies from Amica Studio before
+spending money on traffic. Do not crop the watermark out — that is a separate
+copyright problem on top of the licensing one.
+
+**2. All six are interiors of one project.** There are no exteriors, no extensions,
+no loft conversions, no work in progress, no before-and-afters. The gallery therefore
+shows four rooms of one home rather than four different projects, and captions are
+written by room, not by borough. The service tiles for Extensions and Loft Conversions
+use interior shots that do not actually show either.
+
+Photography that would materially improve the page, in priority order:
+
+1. A rear or side-return extension, shot from the garden
+2. A finished loft conversion showing the roofline or dormer
+3. Exteriors of completed prime London properties
+4. Before-and-after pairs of any project
+5. The team on site — the approach section is about people, and currently has none
+
+Adding any file at the paths above swaps it in. Missing files fall back to a
+labelled placeholder block naming the path, so nothing breaks.
 
 ## Before launch
 
-- [ ] Upload the images above
+- [ ] Replace the watermarked Amica Studio proofs with licensed files
 - [ ] Set the GHL form redirect: form settings → On submit → Redirect → `/thank-you.html`
 - [ ] Add hidden UTM fields in the GHL form builder: `utm_source`, `utm_medium`,
       `utm_campaign`, `utm_content`, `utm_term`, `gclid`, `fbclid`, `ttclid`, `msclkid`
 - [ ] Add the Google Ads conversion tag to `thank-you.html` (marked placeholder in the head)
 - [ ] Verify the 5.0 star rating on the trust strip, or remove it — an unevidenced
       review claim breaches the CAP Code
-- [ ] Replace the gallery captions with real project outcomes where they exist
+- [ ] Add photography from other projects so the gallery shows four homes, not four rooms
 - [ ] Complete `privacy.html` and `terms.html` (bracketed fields)
 - [ ] Confirm the "within 1 working hour" callback promise on `thank-you.html`
 

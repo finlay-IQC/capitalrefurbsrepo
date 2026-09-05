@@ -83,6 +83,7 @@ a{color:inherit}
   margin:0 0 20px;
 }
 .eyebrow--light{color:var(--bronze-light)}
+.hero .eyebrow--light{color:#DCC7A8}
 
 .h-section{
   font-family:var(--serif);
@@ -144,7 +145,7 @@ a{color:inherit}
 .btn--ink:hover{background:#000}
 
 .friction{
-  font-size:14px;color:var(--muted-light);
+  font-size:14px;color:rgba(253,252,249,.86);
   margin:16px 0 0;letter-spacing:.02em;
 }
 .friction--dark{color:var(--muted)}
@@ -173,7 +174,9 @@ a{color:inherit}
 
 .hero-veil{
   position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(19,18,16,.62) 0%,rgba(19,18,16,.5) 45%,rgba(19,18,16,.8) 100%);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%,rgba(19,18,16,.55),rgba(19,18,16,0) 70%),
+    linear-gradient(180deg,rgba(19,18,16,.7) 0%,rgba(19,18,16,.52) 45%,rgba(19,18,16,.84) 100%);
 }
 
 .hero-bar{
