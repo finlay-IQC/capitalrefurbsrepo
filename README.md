@@ -65,8 +65,6 @@ labelled placeholder block naming the path, so nothing breaks.
 - [ ] Add hidden UTM fields in the GHL form builder: `utm_source`, `utm_medium`,
       `utm_campaign`, `utm_content`, `utm_term`, `gclid`, `fbclid`, `ttclid`, `msclkid`
 - [ ] Add the Google Ads conversion tag to `thank-you.html` (marked placeholder in the head)
-- [ ] Verify the 5.0 star rating on the trust strip, or remove it — an unevidenced
-      review claim breaches the CAP Code
 - [ ] Add photography from other projects so the gallery shows four homes, not four rooms
 - [ ] Complete `privacy.html` and `terms.html` (bracketed fields)
 - [ ] Confirm the "within 1 working hour" callback promise on `thank-you.html`
