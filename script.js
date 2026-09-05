@@ -116,28 +116,39 @@
 
     bar.hidden = false;
 
-    var show = function (on) {
-      bar.classList.toggle('is-on', on);
+    /* The bar is wanted once the hero is behind you, except while the form is
+       on screen — it would sit on top of it. The form is directly below the
+       hero, so both states change constantly and each must be tracked. */
+    var pastHero = false;
+    var formOnScreen = false;
+
+    var render = function () {
+      bar.classList.toggle('is-on', pastHero && !formOnScreen);
     };
 
+    var form = document.getElementById('project-form');
+
     if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        show(!entries[0].isIntersecting);
-      }, { rootMargin: '-70px 0px 0px 0px' });
-      observer.observe(hero);
+      new IntersectionObserver(function (entries) {
+        pastHero = !entries[0].isIntersecting;
+        render();
+      }, { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
+
+      if (form) {
+        new IntersectionObserver(function (entries) {
+          formOnScreen = entries[0].isIntersecting;
+          render();
+        }, { threshold: 0.2 }).observe(form);
+      }
     } else {
       window.addEventListener('scroll', function () {
-        show(window.pageYOffset > hero.offsetHeight * 0.8);
+        pastHero = window.pageYOffset > hero.offsetHeight * 0.8;
+        if (form) {
+          var box = form.getBoundingClientRect();
+          formOnScreen = box.top < window.innerHeight && box.bottom > 0;
+        }
+        render();
       }, { passive: true });
-    }
-
-    /* Hide the bar while the form itself is on screen — it would cover it. */
-    var form = document.getElementById('project-form');
-    if (form && 'IntersectionObserver' in window) {
-      var formWatcher = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) bar.classList.remove('is-on');
-      }, { threshold: 0.25 });
-      formWatcher.observe(form);
     }
   }
 

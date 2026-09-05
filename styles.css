@@ -450,7 +450,13 @@ a{color:inherit}
 /* ==========================================================================
    10. FORM
    ========================================================================== */
-.form-section{background:var(--cream);border-top:1px solid var(--line)}
+.form-section{
+  background:var(--cream);
+  border-top:1px solid var(--line);
+  /* sits directly under the hero, so the top is tightened to keep the form high */
+  padding-top:44px;
+}
+@media (min-width:900px){ .form-section{padding-top:64px} }
 .form-embed{
   min-height:700px;               /* reserves space so the embed cannot shift layout */
   margin-top:36px;

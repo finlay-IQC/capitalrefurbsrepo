@@ -6,7 +6,8 @@ No build step. Deploy the repo root as-is.
 ## Files
 
 ```
-index.html        Landing page (hero → proof → problem → approach → services → FAQ → form → CTA)
+index.html        Landing page (hero → proof strip → form → problem → approach →
+                  how it works → the call → gallery → services → FAQ → final CTA)
 thank-you.html    Post-submission page. Conversion event fires here only.
 privacy.html      Privacy policy (placeholder — needs completing before launch)
 terms.html        Terms of service (placeholder — needs completing before launch)
