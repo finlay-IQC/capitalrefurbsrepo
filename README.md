@@ -59,10 +59,40 @@ Photography that would materially improve the page, in priority order:
 Adding any file at the paths above swaps it in. Missing files fall back to a
 labelled placeholder block naming the path, so nothing breaks.
 
+## Live URL and DNS
+
+The funnel is served from **https://quote.capitalrefurbishments.com/** on Vercel.
+
+`quote.` carries both the website and the GoHighLevel/Mailgun email sending
+records. DNS forbids a CNAME from coexisting with other record types on the same
+name, so the web record here is an **A record**, not a CNAME:
+
+| Type | Name | Value | TTL |
+| --- | --- | --- | --- |
+| A | quote | 76.76.21.21 | 600 |
+
+Two things not to do to this record:
+
+- **Do not replace it with a CNAME.** Vercel's Domains page recommends a CNAME for
+  subdomains and will show an amber "DNS Change Recommended" badge against this
+  domain. Ignore it. Switching to a CNAME forces the MX and TXT records off
+  `quote.` and breaks email sending.
+- **Do not delete the MX, SPF, DKIM or DMARC records** on `quote.` while trying to
+  fix the site. They are unrelated to whether the page loads.
+
+`76.76.21.21` is Vercel's legacy anycast IP, which Vercel confirms continues to be
+supported. This is the arrangement that lets one hostname serve the page and send
+email at the same time.
+
+An earlier outage on this domain was caused by exactly this: adding the sending
+subdomain dropped the web CNAME from `quote.`, leaving no address record and a
+`DNS_PROBE_FINISHED_NXDOMAIN` in the browser.
+
 ## Before launch
 
 - [ ] Replace the watermarked Amica Studio proofs with licensed files
-- [ ] Set the GHL form redirect: form settings → On submit → Redirect → `/thank-you.html`
+- [ ] Set the GHL form redirect: form settings → On submit → Redirect →
+      `https://quote.capitalrefurbishments.com/thank-you.html`
 - [ ] Add hidden UTM fields in the GHL form builder: `utm_source`, `utm_medium`,
       `utm_campaign`, `utm_content`, `utm_term`, `gclid`, `fbclid`, `ttclid`, `msclkid`
 - [ ] Add the Google Ads conversion tag to `thank-you.html` (marked placeholder in the head)
