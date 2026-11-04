@@ -1,18 +1,8 @@
 /* ==========================================================================
    Capital Refurbishment Solutions — funnel script
-   UTM persistence, sticky CTA, FAQ accordion, hero video, redirect helpers.
+   UTM persistence, sticky CTA, FAQ accordion, redirect helpers.
    No dependencies.
    ========================================================================== */
-
-/* ---------------------------------------------------------------------------
-   HERO VIDEO
-   Drop the film in here after the shoot. Accepts either:
-     an MP4   — "https://.../meet-the-team.mp4"  (or a local path, "video/team.mp4")
-     a YouTube URL — any of watch?v=, youtu.be/, or /embed/ forms
-   Leave it as "" and the slot renders the poster with a play overlay and does
-   nothing on click. No layout change either way.
---------------------------------------------------------------------------- */
-var PAGE_VIDEO_URL = "";
 
 (function () {
   'use strict';
@@ -217,55 +207,6 @@ var PAGE_VIDEO_URL = "";
 
 
   /* ------------------------------------------------------------------
-     4b. Hero video
-     Click-to-play so nothing from YouTube loads until the viewer asks.
-  ------------------------------------------------------------------ */
-  function youTubeId(url) {
-    var m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
-    return m ? m[1] : null;
-  }
-
-  function initVideo() {
-    var slot = document.querySelector('[data-video]');
-    if (!slot) return;
-
-    var button = slot.querySelector('[data-video-play]');
-    if (!button) return;
-
-    var url = String(typeof PAGE_VIDEO_URL === 'string' ? PAGE_VIDEO_URL : '').trim();
-
-    if (!url) {
-      /* No film yet — poster stays, overlay stays, click does nothing. */
-      slot.classList.add('is-awaiting');
-      button.setAttribute('aria-disabled', 'true');
-      button.addEventListener('click', function (event) { event.preventDefault(); });
-      return;
-    }
-
-    button.addEventListener('click', function () {
-      var frame;
-      var id = youTubeId(url);
-
-      if (id) {
-        frame = document.createElement('iframe');
-        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
-        frame.title = 'Meet the team behind your build';
-        frame.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
-        frame.setAttribute('allowfullscreen', '');
-      } else {
-        frame = document.createElement('video');
-        frame.src = url;
-        frame.controls = true;
-        frame.autoplay = true;
-        frame.playsInline = true;
-      }
-
-      frame.className = 'video-player';
-      button.replaceWith(frame);
-    }, { once: true });
-  }
-
-  /* ------------------------------------------------------------------
      5. Misc
   ------------------------------------------------------------------ */
   function initYear() {
@@ -298,7 +239,6 @@ var PAGE_VIDEO_URL = "";
     decorateFormEmbed();
     initStickyCta();
     initFaq();
-    initVideo();
     initRedirectHelper();
     initYear();
     initAnchors();

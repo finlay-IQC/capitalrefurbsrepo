@@ -105,21 +105,6 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
       <p class="form-alt">Prefer to talk now? Call <a href="tel:+447863783993">07863 783993</a></p>
     </section>
 
-    <!-- Video slot. Set PAGE_VIDEO_URL at the top of script.js to an MP4 or YouTube URL.
-         While it is empty this renders the poster with a play overlay and does nothing on click. -->
-    <figure class="video-slot" data-video>
-      <button class="video-btn" type="button" data-video-play aria-label="Play video: Meet the team behind your build">
-        <picture>
-          <source type="image/webp" srcset="images/projects/living-media-wall.webp">
-          <picture>
-            <source type="image/webp" srcset="images/projects/living-media-wall.webp">
-            <img src="images/projects/living-media-wall.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-        </picture>
-        <span class="video-icon" aria-hidden="true"></span>
-      </button>
-      <figcaption>Meet the team behind your build</figcaption>
-    </figure>
   </div>
 
   <!-- Trust bar. Sits under the form on mobile and above it from 1000px up
@@ -335,85 +320,12 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ============ 10. BEFORE & AFTER ============ -->
-<!-- Drop real "before" photos in and replace each .ba-empty div with a <picture> block
-     matching the "after" cell beside it. Suggested paths:
-       images/projects/before-living-red-sofa.jpg
-       images/projects/before-kitchen-crittall.jpg
-       images/projects/before-bedroom-panelled.jpg
-       images/projects/before-dining-crittall.jpg -->
-<section class="section band" aria-labelledby="ba-h">
-  <div class="wrap center proof-head">
-    <p class="eyebrow">Before &amp; after</p>
-    <h2 id="ba-h" class="h-section">The same rooms, before we started</h2>
-  </div>
-  <div class="ba-list">
-    <div class="ba-pair">
-      <figure class="ba-cell">
-        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
-        <figcaption>Before</figcaption>
-      </figure>
-      <figure class="ba-cell">
-        <picture>
-          <source type="image/webp" srcset="images/projects/living-red-sofa.webp">
-          <picture>
-            <source type="image/webp" srcset="images/projects/living-red-sofa.webp">
-            <img src="images/projects/living-red-sofa.jpg" alt="Living room after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-        </picture>
-        <figcaption>After &middot; Living room</figcaption>
-      </figure>
-    </div>
-    <div class="ba-pair">
-      <figure class="ba-cell">
-        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
-        <figcaption>Before</figcaption>
-      </figure>
-      <figure class="ba-cell">
-        <picture>
-          <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
-          <picture>
-            <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
-            <img src="images/projects/kitchen-crittall.jpg" alt="Kitchen after refurbishment" width="1600" height="1199" loading="lazy" decoding="async">
-          </picture>
-        </picture>
-        <figcaption>After &middot; Kitchen</figcaption>
-      </figure>
-    </div>
-    <div class="ba-pair">
-      <figure class="ba-cell">
-        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
-        <figcaption>Before</figcaption>
-      </figure>
-      <figure class="ba-cell">
-        <picture>
-          <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
-          <picture>
-            <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
-            <img src="images/projects/bedroom-panelled.jpg" alt="Principal bedroom after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-        </picture>
-        <figcaption>After &middot; Principal bedroom</figcaption>
-      </figure>
-    </div>
-    <div class="ba-pair">
-      <figure class="ba-cell">
-        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
-        <figcaption>Before</figcaption>
-      </figure>
-      <figure class="ba-cell">
-        <picture>
-          <source type="image/webp" srcset="images/projects/dining-crittall.webp">
-          <picture>
-            <source type="image/webp" srcset="images/projects/dining-crittall.webp">
-            <img src="images/projects/dining-crittall.jpg" alt="Dining room after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-        </picture>
-        <figcaption>After &middot; Dining room</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
+<!-- BEFORE & AFTER — removed until real "before" photography exists.
+     Restore it here once there are before shots to pair with the gallery
+     images: a .ba-list of .ba-pair rows, each holding a before <picture> and
+     an after <picture>. The .ba-* styles were removed with it; see commit
+     44301b4 for the markup and CSS if you want them back verbatim. -->
+
 <!-- ============ 9. SERVICES ============ -->
 <section class="dark section" aria-labelledby="svc-h">
   <div class="wrap">
