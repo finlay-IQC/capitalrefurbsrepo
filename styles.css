@@ -180,8 +180,12 @@ picture{display:contents}
 .hero-tel:hover{border-color:var(--bronze-light)}
 
 /* --- headline block --- */
+/* The hero stacks in DOM order on mobile — headline, form, trust bar — and
+   reorders from 1000px up so the trust bar sits above the form on desktop. */
+.hero-stack{position:relative;display:flex;flex-direction:column}
+
 .hero-head{
-  position:relative;width:100%;max-width:900px;margin:0 auto 44px;
+  width:100%;max-width:900px;margin:0 auto 26px;
   text-align:center;color:var(--cream);
 }
 .hero .eyebrow--light{color:#DCC7A8}
@@ -202,7 +206,8 @@ picture{display:contents}
 /* --- trust bar: under the subheadline, above the form --- */
 .hero-trust{
   list-style:none;display:grid;grid-template-columns:repeat(2,1fr);
-  gap:18px 12px;margin:34px 0 0;padding:28px 0 0;
+  gap:18px 12px;
+  width:100%;max-width:900px;margin:36px auto 0;padding:30px 0 0;
   border-top:1px solid var(--line-light);
 }
 @media (min-width:760px){ .hero-trust{grid-template-columns:repeat(4,1fr);gap:12px} }
@@ -228,6 +233,10 @@ picture{display:contents}
 }
 @media (min-width:1000px){
   .hero-action{grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);gap:40px}
+  /* desktop: headline, trust bar, then the form */
+  .hero-head{order:1;margin-bottom:24px}
+  .hero-trust{order:2;margin:0 auto 42px}
+  .hero-action{order:3}
 }
 
 .hero-form{
