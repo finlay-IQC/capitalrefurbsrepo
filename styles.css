@@ -599,33 +599,3 @@ body.has-sticky{padding-bottom:0}
   color:var(--bronze-dark);text-decoration:none;
   border-bottom:1px solid var(--line);padding-bottom:4px;
 }
-
-/* ==========================================================================
-   TESTIMONIALS
-   ========================================================================== */
-.tst-grid{
-  list-style:none;margin:48px 0 0;padding:0;
-  display:grid;grid-template-columns:1fr;gap:0;
-  border-top:1px solid var(--line-light);
-}
-@media (min-width:860px){ .tst-grid{grid-template-columns:repeat(3,1fr);gap:0 44px} }
-.tst{padding:32px 0;border-bottom:1px solid var(--line-light)}
-@media (min-width:860px){ .tst{border-bottom:none;padding:38px 0 0} }
-.tst-flag{
-  margin:0 0 16px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--bronze-light);
-}
-.tst-quote{
-  margin:0 0 20px;padding:0;
-  font-family:var(--serif);font-weight:300;font-size:21px;line-height:1.45;
-  color:var(--cream);
-}
-@media (min-width:900px){ .tst-quote{font-size:23px} }
-.tst-by{margin:0;display:flex;flex-direction:column;gap:3px}
-.tst-name{
-  font-size:14px;font-weight:500;letter-spacing:.04em;color:var(--cream);
-}
-.tst-area,.tst-type{
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(253,252,249,.6);
-}
