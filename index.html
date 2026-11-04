@@ -40,10 +40,13 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
 
 <!-- ============ 1. HERO ============ -->
 <header class="hero">
-  <figure class="slot slot--hero">
-    <img src="images/hero/hero-main.jpg" alt="A completed prime London residential refurbishment by Capital Refurbishment Solutions" fetchpriority="high" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-    <figcaption class="slot-tag">HERO IMAGE &middot; images/hero/hero-main.jpg &middot; 2400&times;1600 landscape</figcaption>
-  </figure>
+  <picture class="hero-bg">
+    <source type="image/webp" srcset="images/hero/hero-main.webp">
+    <picture>
+      <source type="image/webp" srcset="images/hero/hero-main.webp">
+      <img src="images/hero/hero-main.jpg" alt="" width="1600" height="1199" fetchpriority="high" decoding="async">
+    </picture>
+  </picture>
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-bar">
@@ -51,80 +54,81 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
     <a class="hero-tel" href="tel:+447863783993">07863 783993</a>
   </div>
 
-  <div class="hero-inner">
+  <div class="hero-head">
     <p class="eyebrow eyebrow--light">For homeowners in Kensington, Fulham, Richmond &amp; prime London</p>
-    <h1>The home you pictured, built <em>properly</em>.</h1>
-    <p class="hero-sub">Capital Refurbishment Solutions handles full refurbishments, extensions, loft conversions and new builds for private homeowners across prime London.</p>
-    <a class="btn btn--gold btn--lg" href="#project-form" data-cta="hero">Book Your Free Project Quote</a>
-    <p class="friction">Free. Takes under 2 minutes. No obligation.</p>
+    <h1>Full Refurbishments, Extensions &amp; Loft Conversions for Prime London Homes</h1>
+    <p class="hero-sub">A fixed price agreed in writing before any work begins. One team from quote to completion. Weekly written updates throughout your project.</p>
 
+    <!-- Trust bar. Star rating confirmed by the client. If a public Google or Trustpilot
+         profile exists, adding the review count and linking to it converts harder. -->
     <ul class="hero-trust">
-      <li><strong>20+</strong><span>Years building</span></li>
+      <li><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Rated 5.0 by our clients</span></li>
+      <li><strong>20+</strong><span>Years in business</span></li>
       <li><strong>100+</strong><span>Projects completed</span></li>
-      <li><strong>5.0</strong><span>Client rating</span></li>
+      <li><strong>SW &amp; W</strong><span>Prime London postcodes</span></li>
     </ul>
   </div>
 
-  <span class="hero-corner hero-corner--l">Kensington &middot; Fulham &middot; Richmond</span>
-  <span class="hero-corner hero-corner--r">Est. London</span>
+  <div class="hero-action">
+    <section class="hero-form" id="project-form" aria-labelledby="form-h">
+      <h2 id="form-h">Tell us about your project</h2>
+      <p class="form-micro">It takes under two minutes and there is no obligation.</p>
+
+      <!-- GoHighLevel form embed.
+           SET IN GHL: form settings > "On submit" > Redirect to
+             https://quote.capitalrefurbishments.com/thank-you
+           ALSO IN GHL: the form's own footer carries Privacy Policy and Terms links that
+           default to example.com. They live inside this iframe and cannot be changed from
+           here. Point them at:
+             https://quote.capitalrefurbishments.com/privacy-policy
+             https://quote.capitalrefurbishments.com/terms-of-service
+           UTM PREFILL: script.js appends captured UTM values to the iframe src below. If your
+           GHL form has no matching hidden fields, add them in the builder with these exact keys:
+           utm_source, utm_medium, utm_campaign, utm_content, utm_term, gclid, fbclid, ttclid, msclkid -->
+      <div class="form-embed">
+        <iframe
+            src="https://api.leadconnectorhq.com/widget/form/Er8P9izazIAM95LEI6lS"
+            style="width:100%;height:100%;min-height:697px;border:none;border-radius:6px"
+            id="inline-Er8P9izazIAM95LEI6lS"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Capital Refurbs Form"
+            data-height="697"
+            data-layout-iframe-id="inline-Er8P9izazIAM95LEI6lS"
+            data-form-id="Er8P9izazIAM95LEI6lS"
+            data-cookie-consent="true"
+            data-cookie-consent-provider="auto"
+            title="Capital Refurbs Form"
+            >
+        </iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      </div>
+
+      <p class="form-alt">Prefer to talk now? Call <a href="tel:+447863783993">07863 783993</a></p>
+    </section>
+
+    <!-- Video slot. Set PAGE_VIDEO_URL at the top of script.js to an MP4 or YouTube URL.
+         While it is empty this renders the poster with a play overlay and does nothing on click. -->
+    <figure class="video-slot" data-video>
+      <button class="video-btn" type="button" data-video-play aria-label="Play video: Meet the team behind your build">
+        <picture>
+          <source type="image/webp" srcset="images/projects/living-media-wall.webp">
+          <picture>
+            <source type="image/webp" srcset="images/projects/living-media-wall.webp">
+            <img src="images/projects/living-media-wall.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </picture>
+        <span class="video-icon" aria-hidden="true"></span>
+      </button>
+      <figcaption>Meet the team behind your build</figcaption>
+    </figure>
+  </div>
 </header>
-
-<!-- ============ 2. SOCIAL PROOF STRIP ============ -->
-<!-- Star rating confirmed by the client. If a public Google or Trustpilot profile exists,
-     adding the review count and linking the strip to it converts harder than the rating alone. -->
-<section class="strip" aria-label="Company credentials">
-  <div class="wrap strip-grid">
-    <div class="strip-item">
-      <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span class="strip-label">Rated 5.0 by our clients</span>
-    </div>
-    <div class="strip-item"><span class="strip-num">20+</span><span class="strip-label">Years in business</span></div>
-    <div class="strip-item"><span class="strip-num">100+</span><span class="strip-label">Projects completed</span></div>
-    <div class="strip-item"><span class="strip-num">SW &amp; W</span><span class="strip-label">Prime London postcodes</span></div>
-  </div>
-</section>
-
-<!-- ============ 3. FORM ============ -->
-<section class="section form-section" id="project-form" aria-labelledby="form-h">
-  <div class="wrap wrap--narrow center">
-    <p class="eyebrow">Start here</p>
-    <h2 id="form-h" class="h-section">Tell us about your project</h2>
-    <p class="lede lede--center">It takes under two minutes and there is no obligation.</p>
-  </div>
-
-  <div class="wrap wrap--form">
-    <!-- GoHighLevel form embed.
-         SET IN GHL: form settings > "On submit" > Redirect to https://YOUR-DOMAIN/thank-you.html
-         UTM PREFILL: script.js appends captured UTM values to the iframe src below. If your GHL form
-         does not have matching hidden fields, add them in the GHL form builder with these exact keys:
-         utm_source, utm_medium, utm_campaign, utm_content, utm_term, gclid, fbclid, ttclid, msclkid -->
-    <div class="form-embed">
-      <iframe
-          src="https://api.leadconnectorhq.com/widget/form/Er8P9izazIAM95LEI6lS"
-          style="width:100%;height:100%;min-height:697px;border:none;border-radius:8px"
-          id="inline-Er8P9izazIAM95LEI6lS"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Capital Refurbs Form"
-          data-height="697"
-          data-layout-iframe-id="inline-Er8P9izazIAM95LEI6lS"
-          data-form-id="Er8P9izazIAM95LEI6lS"
-          data-cookie-consent="true"
-          data-cookie-consent-provider="auto"
-          title="Capital Refurbs Form"
-          >
-      </iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-    </div>
-
-    <p class="form-alt">Prefer to talk now? Call <a href="tel:+447863783993">07863 783993</a></p>
-  </div>
-</section>
 
 <!-- ============ 4. PROBLEM ============ -->
 <section class="dark section" aria-labelledby="problem-h">
@@ -162,8 +166,10 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
 
   <div class="mech-grid">
     <figure class="slot slot--tall mech-cell">
-      <img src="images/projects/bedroom-wardrobes.jpg" alt="Principal bedroom with fitted wardrobes" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">MECHANISM IMAGE 1 &middot; images/projects/bedroom-wardrobes.jpg &middot; portrait</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/bedroom-wardrobes.webp">
+        <img src="images/projects/bedroom-wardrobes.jpg" alt="Principal bedroom with fitted wardrobes" width="1600" height="1199" loading="lazy" decoding="async">
+      </picture>
       <div class="mech-copy">
         <h3>One team, start to finish</h3>
         <p>The people who quote your job are the people on site building it.</p>
@@ -171,8 +177,10 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
     </figure>
 
     <figure class="slot slot--tall mech-cell">
-      <img src="images/projects/dining-crittall.jpg" alt="Dining room with crittall glazing" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">MECHANISM IMAGE 2 &middot; images/projects/dining-crittall.jpg &middot; portrait</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/dining-crittall.webp">
+        <img src="images/projects/dining-crittall.jpg" alt="Dining room with crittall glazing" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <div class="mech-copy">
         <h3>A fixed price before we start</h3>
         <p>Every cost is written down and agreed before any work begins.</p>
@@ -180,8 +188,10 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
     </figure>
 
     <figure class="slot slot--tall mech-cell">
-      <img src="images/projects/living-media-wall.jpg" alt="Living room with bespoke joinery and media wall" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">MECHANISM IMAGE 3 &middot; images/projects/living-media-wall.jpg &middot; portrait</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/living-media-wall.webp">
+        <img src="images/projects/living-media-wall.jpg" alt="Living room with bespoke joinery and media wall" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <div class="mech-copy">
         <h3>Updates every week, in writing</h3>
         <p>You know what happened, what is next, and what it costs.</p>
@@ -191,6 +201,46 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
 
   <div class="wrap wrap--narrow center">
     <a class="btn btn--ink" href="#project-form" data-cta="mechanism">Book Your Free Project Quote</a>
+  </div>
+</section>
+
+<!-- ============ 6. TESTIMONIALS ============ -->
+<!-- REPLACE each block with a real client. Keep the markup; only the text inside changes.
+     Delete the .tst-flag line once a real testimonial is in. -->
+<section class="dark section" aria-labelledby="tst-h">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light">Client feedback</p>
+    <h2 id="tst-h" class="h-section h-section--light">What homeowners say afterwards</h2>
+
+    <ul class="tst-grid">
+      <li class="tst">
+        <p class="tst-flag">[TESTIMONIAL 1 &ndash; REPLACE]</p>
+        <blockquote class="tst-quote">Two or three sentences in the client's own words: what the project was, what they were worried about, and how it actually went.</blockquote>
+        <p class="tst-by">
+          <span class="tst-name">[First name]</span>
+          <span class="tst-area">[Area, e.g. Fulham SW6]</span>
+          <span class="tst-type">[Project type, e.g. Full refurbishment]</span>
+        </p>
+      </li>
+      <li class="tst">
+        <p class="tst-flag">[TESTIMONIAL 2 &ndash; REPLACE]</p>
+        <blockquote class="tst-quote">Two or three sentences in the client's own words: what the project was, what they were worried about, and how it actually went.</blockquote>
+        <p class="tst-by">
+          <span class="tst-name">[First name]</span>
+          <span class="tst-area">[Area, e.g. Kensington W8]</span>
+          <span class="tst-type">[Project type, e.g. Loft conversion]</span>
+        </p>
+      </li>
+      <li class="tst">
+        <p class="tst-flag">[TESTIMONIAL 3 &ndash; REPLACE]</p>
+        <blockquote class="tst-quote">Two or three sentences in the client's own words: what the project was, what they were worried about, and how it actually went.</blockquote>
+        <p class="tst-by">
+          <span class="tst-name">[First name]</span>
+          <span class="tst-area">[Area, e.g. Richmond TW9]</span>
+          <span class="tst-type">[Project type, e.g. Rear extension]</span>
+        </p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -222,8 +272,10 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
 <!-- ============ 7. WHAT YOU GET FROM THE CALL ============ -->
 <section class="split" aria-labelledby="call-h">
   <figure class="slot slot--split">
-    <img src="images/projects/bedroom-panelled.jpg" alt="Bedroom with full-height timber panelling" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-    <figcaption class="slot-tag">CALL IMAGE &middot; images/projects/bedroom-panelled.jpg &middot; portrait or square</figcaption>
+    <picture>
+      <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
+      <img src="images/projects/bedroom-panelled.jpg" alt="Bedroom with full-height timber panelling" width="1600" height="1200" loading="lazy" decoding="async">
+    </picture>
   </figure>
   <div class="split-copy">
     <p class="eyebrow">The call</p>
@@ -246,32 +298,117 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
     <p class="eyebrow">Recent work</p>
     <h2 id="proof-h" class="h-section">Inside a recent London refurbishment</h2>
   </div>
-  <!-- Replace the captions below with the real project, area and outcome once confirmed
-       (e.g. "Full refurbishment, Kensington — delivered in 22 weeks"). -->
   <div class="gallery">
     <figure class="slot slot--gal">
-      <img src="images/projects/living-red-sofa.jpg" alt="Living room in a completed prime London refurbishment" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">PROJECT 1 &middot; images/projects/living-red-sofa.jpg</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/living-red-sofa.webp">
+        <img src="images/projects/living-red-sofa.jpg" alt="Living room in a completed prime London refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <span class="gal-cap">Living room &middot; full refurbishment</span>
     </figure>
     <figure class="slot slot--gal">
-      <img src="images/projects/kitchen-crittall.jpg" alt="Kitchen with bespoke timber joinery and crittall partition" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">PROJECT 2 &middot; images/projects/kitchen-crittall.jpg</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
+        <img src="images/projects/kitchen-crittall.jpg" alt="Kitchen with bespoke timber joinery and crittall partition" width="1600" height="1199" loading="lazy" decoding="async">
+      </picture>
       <span class="gal-cap">Kitchen &middot; bespoke joinery</span>
     </figure>
     <figure class="slot slot--gal">
-      <img src="images/projects/bedroom-panelled.jpg" alt="Principal bedroom with fitted timber panelling" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">PROJECT 3 &middot; images/projects/bedroom-panelled.jpg</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
+        <img src="images/projects/bedroom-panelled.jpg" alt="Principal bedroom with fitted timber panelling" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <span class="gal-cap">Principal bedroom &middot; fitted panelling</span>
     </figure>
     <figure class="slot slot--gal">
-      <img src="images/projects/dining-crittall.jpg" alt="Dining room with crittall glazing and bespoke lighting" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <figcaption class="slot-tag">PROJECT 4 &middot; images/projects/dining-crittall.jpg</figcaption>
+      <picture>
+        <source type="image/webp" srcset="images/projects/dining-crittall.webp">
+        <img src="images/projects/dining-crittall.jpg" alt="Dining room with crittall glazing and bespoke lighting" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <span class="gal-cap">Dining room &middot; crittall glazing</span>
     </figure>
   </div>
 </section>
 
+<!-- ============ 10. BEFORE & AFTER ============ -->
+<!-- Drop real "before" photos in and replace each .ba-empty div with a <picture> block
+     matching the "after" cell beside it. Suggested paths:
+       images/projects/before-living-red-sofa.jpg
+       images/projects/before-kitchen-crittall.jpg
+       images/projects/before-bedroom-panelled.jpg
+       images/projects/before-dining-crittall.jpg -->
+<section class="section band" aria-labelledby="ba-h">
+  <div class="wrap center proof-head">
+    <p class="eyebrow">Before &amp; after</p>
+    <h2 id="ba-h" class="h-section">The same rooms, before we started</h2>
+  </div>
+  <div class="ba-list">
+    <div class="ba-pair">
+      <figure class="ba-cell">
+        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
+        <figcaption>Before</figcaption>
+      </figure>
+      <figure class="ba-cell">
+        <picture>
+          <source type="image/webp" srcset="images/projects/living-red-sofa.webp">
+          <picture>
+            <source type="image/webp" srcset="images/projects/living-red-sofa.webp">
+            <img src="images/projects/living-red-sofa.jpg" alt="Living room after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </picture>
+        <figcaption>After &middot; Living room</figcaption>
+      </figure>
+    </div>
+    <div class="ba-pair">
+      <figure class="ba-cell">
+        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
+        <figcaption>Before</figcaption>
+      </figure>
+      <figure class="ba-cell">
+        <picture>
+          <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
+          <picture>
+            <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
+            <img src="images/projects/kitchen-crittall.jpg" alt="Kitchen after refurbishment" width="1600" height="1199" loading="lazy" decoding="async">
+          </picture>
+        </picture>
+        <figcaption>After &middot; Kitchen</figcaption>
+      </figure>
+    </div>
+    <div class="ba-pair">
+      <figure class="ba-cell">
+        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
+        <figcaption>Before</figcaption>
+      </figure>
+      <figure class="ba-cell">
+        <picture>
+          <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
+          <picture>
+            <source type="image/webp" srcset="images/projects/bedroom-panelled.webp">
+            <img src="images/projects/bedroom-panelled.jpg" alt="Principal bedroom after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </picture>
+        <figcaption>After &middot; Principal bedroom</figcaption>
+      </figure>
+    </div>
+    <div class="ba-pair">
+      <figure class="ba-cell">
+        <div class="ba-empty">[BEFORE IMAGE &ndash; ADD]</div>
+        <figcaption>Before</figcaption>
+      </figure>
+      <figure class="ba-cell">
+        <picture>
+          <source type="image/webp" srcset="images/projects/dining-crittall.webp">
+          <picture>
+            <source type="image/webp" srcset="images/projects/dining-crittall.webp">
+            <img src="images/projects/dining-crittall.jpg" alt="Dining room after refurbishment" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+        </picture>
+        <figcaption>After &middot; Dining room</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 <!-- ============ 9. SERVICES ============ -->
 <section class="dark section" aria-labelledby="svc-h">
   <div class="wrap">
@@ -280,23 +417,31 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
   </div>
   <div class="svc-grid">
     <a class="svc slot slot--svc" href="#project-form" data-cta="service-refurb">
-      <img src="images/projects/living-media-wall.jpg" alt="" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <span class="slot-tag">images/projects/living-media-wall.jpg</span>
+      <picture>
+        <source type="image/webp" srcset="images/projects/living-media-wall.webp">
+        <img src="images/projects/living-media-wall.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <span class="svc-body"><span class="svc-name">House Renovations</span><span class="svc-note">Whole-home refurbishment, top to bottom.</span></span>
     </a>
     <a class="svc slot slot--svc" href="#project-form" data-cta="service-extension">
-      <img src="images/projects/dining-crittall.jpg" alt="" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <span class="slot-tag">images/projects/dining-crittall.jpg</span>
+      <picture>
+        <source type="image/webp" srcset="images/projects/dining-crittall.webp">
+        <img src="images/projects/dining-crittall.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+      </picture>
       <span class="svc-body"><span class="svc-name">Extensions</span><span class="svc-note">Rear, side return and wrap-around builds.</span></span>
     </a>
     <a class="svc slot slot--svc" href="#project-form" data-cta="service-loft">
-      <img src="images/projects/bedroom-wardrobes.jpg" alt="" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <span class="slot-tag">images/projects/bedroom-wardrobes.jpg</span>
+      <picture>
+        <source type="image/webp" srcset="images/projects/bedroom-wardrobes.webp">
+        <img src="images/projects/bedroom-wardrobes.jpg" alt="" width="1600" height="1199" loading="lazy" decoding="async">
+      </picture>
       <span class="svc-body"><span class="svc-name">Loft Conversions</span><span class="svc-note">New bedrooms and bathrooms in the roof.</span></span>
     </a>
     <a class="svc slot slot--svc" href="#project-form" data-cta="service-kitchen">
-      <img src="images/projects/kitchen-crittall.jpg" alt="" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-      <span class="slot-tag">images/projects/kitchen-crittall.jpg</span>
+      <picture>
+        <source type="image/webp" srcset="images/projects/kitchen-crittall.webp">
+        <img src="images/projects/kitchen-crittall.jpg" alt="" width="1600" height="1199" loading="lazy" decoding="async">
+      </picture>
       <span class="svc-body"><span class="svc-name">Kitchen Refurbishment</span><span class="svc-note">Fitted kitchens, utilities and open-plan living.</span></span>
     </a>
   </div>
@@ -357,8 +502,10 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
 <!-- ============ 11. FINAL CTA ============ -->
 <section class="final" aria-labelledby="final-h">
   <figure class="slot slot--final">
-    <img src="images/hero/cta-band.jpg" alt="" loading="lazy" onerror="this.closest('.slot').classList.add('is-empty');this.remove();">
-    <figcaption class="slot-tag">FINAL CTA IMAGE &middot; images/hero/cta-band.jpg &middot; wide landscape</figcaption>
+    <picture>
+      <source type="image/webp" srcset="images/hero/cta-band.webp">
+      <img src="images/hero/cta-band.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async">
+    </picture>
   </figure>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="final-inner">
@@ -378,8 +525,8 @@ src="https://www.facebook.com/tr?id=971365851907422&ev=PageView&noscript=1"
       <p class="foot-desc">High-specification refurbishments, extensions and loft conversions for homeowners across prime London.</p>
     </div>
     <div class="foot-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
     </div>
   </div>
   <div class="wrap foot-base">
